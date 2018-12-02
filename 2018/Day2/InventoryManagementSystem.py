@@ -1,10 +1,9 @@
 def get_input(filename):
     changes = []
-    file = open(filename)
-    for line in file:
-        line = line[:-1]
-        changes.append(line)
-    file.close()
+    with open(filename) as file:
+        for line in file:
+            line = line[:-1]
+            changes.append(line)
     return changes
 
 

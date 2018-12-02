@@ -1,18 +1,14 @@
 def get_input(filename):
     changes = []
-    file = open(filename)
-    for line in file:
-        line = int(line[:-1])
-        changes.append(line)
-    file.close()
+    with open(filename) as file:
+        for line in file:
+            line = int(line[:-1])
+            changes.append(line)
     return changes
 
 
 def get_resulting_frequency(my_list):
-    sum_of_frequencies = 0
-    for x in my_list:
-        sum_of_frequencies = sum_of_frequencies + x
-    return sum_of_frequencies
+    return sum(my_list)
 
 
 def get_first_repeating_frequency(my_list):
